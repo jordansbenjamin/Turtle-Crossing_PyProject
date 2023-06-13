@@ -10,6 +10,7 @@ screen.title('Turtle Crossing')
 screen.tracer(0)
 
 turtle = Player()
+car = CarManager()
 
 screen.listen()
 screen.onkey(turtle.move, "Up")
@@ -18,5 +19,7 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+    car.create_cars()
+    car.move_car()
 
 screen.exitonclick()
