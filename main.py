@@ -28,4 +28,7 @@ while game_is_on:
     car.move_car()
     counter += 1
 
+    if car.collision(turtle):
+        game_is_on = False
+
 screen.exitonclick()

@@ -27,5 +27,10 @@ class CarManager(Turtle):
         for car in self.cars:
             if car.xcor() < 350:
                 car.forward(STARTING_MOVE_DISTANCE)
-        
+    
+    def collision(self, turtle):
+        for car in self.cars:
+            if turtle.distance(car) < 20:
+                return True
+        return False
     
