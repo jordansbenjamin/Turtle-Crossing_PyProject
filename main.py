@@ -16,10 +16,16 @@ screen.listen()
 screen.onkey(turtle.move, "Up")
 
 game_is_on = True
+counter = 0
+generate_new_cars = 6
 while game_is_on:
     time.sleep(0.1)
     screen.update()
-    car.create_cars()
+    
+    if counter % generate_new_cars == 0:
+        car.create_cars()
+    
     car.move_car()
+    counter += 1
 
 screen.exitonclick()
