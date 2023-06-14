@@ -10,6 +10,7 @@ class CarManager(Turtle):
         super().__init__()
         self.cars = []
         self.hideturtle()
+        self.speed = STARTING_MOVE_DISTANCE
             
     def create_cars(self):
         for i in range(len(COLORS)):
@@ -26,7 +27,7 @@ class CarManager(Turtle):
     def move_car(self):
         for car in self.cars:
             if car.xcor() < 350:
-                car.forward(STARTING_MOVE_DISTANCE)
+                car.forward(self.speed)
     
     def collision(self, turtle):
         for car in self.cars:
@@ -34,3 +35,5 @@ class CarManager(Turtle):
                 return True
         return False
     
+    def increase_speed(self):
+        self.speed += MOVE_INCREMENT

@@ -18,17 +18,22 @@ screen.onkey(turtle.move, "Up")
 game_is_on = True
 counter = 0
 generate_new_cars = 6
+
 while game_is_on:
     time.sleep(0.1)
     screen.update()
-    
+    # Generate new set of cars after 6 passes of the loop
     if counter % generate_new_cars == 0:
         car.create_cars()
     
     car.move_car()
     counter += 1
-
+    # Detects turtle collision with cars
     if car.collision(turtle):
         game_is_on = False
-
+    # Detect when turtle reaches the finish line
+    if turtle.reached_finish_line():
+        turtle.reset()
+        car.increase_speed()
+        
 screen.exitonclick()
