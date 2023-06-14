@@ -32,7 +32,7 @@ while game_is_on:
 
     # Detects turtle collision with cars
     if car.collision(turtle):
-        # Display game over
+        scoreboard.game_over()
         game_is_on = False
 
     # Detect when turtle reaches the finish line
