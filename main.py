@@ -38,7 +38,7 @@ while game_is_on:
     # Detect when turtle reaches the finish line
     if turtle.reached_finish_line():
         turtle.reset()
-        # Update level
+        scoreboard.increase_score()
         car.increase_speed()
         
 screen.exitonclick()
